@@ -15,7 +15,7 @@ RUN apk update && apk upgrade && \
 
 # Tell Puppeteer to skip installing Chrome. We'll be using the installed package.
 ENV PUPPETEER_SKIP_DOWNLOAD true
-ENV PUPPETEER_EXECUTABLE_PATH /usr/bin
+ENV PUPPETEER_EXECUTABLE_PATH /usr/bin/chromium-browser
 
 # Need to run Chromium with --no-sandbox since GitHub Actions run as root
 ENV CHROMIUM_USER_FLAGS "--no-sandbox"
