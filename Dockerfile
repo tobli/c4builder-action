@@ -17,6 +17,9 @@ RUN apk update && apk upgrade && \
 ENV PUPPETEER_SKIP_DOWNLOAD true
 ENV PUPPETEER_EXECUTABLE_PATH /usr/bin
 
+# Need to run Chromium with --no-sandbox since GitHub Actions run as root
+ENV CHROMIUM_USER_FLAGS "--no-sandbox"
+
 # Install C4Builder
 RUN npm install --global c4builder
 
